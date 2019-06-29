@@ -69,7 +69,6 @@ function DragSelection(zone, point, mode) {
 				item_right = item_left + $item.width();
 				item_bottom = item_top + $item.height();
 
-
 				// 드래그 범위와 블록의 위치가 일치하는지 판단     
 				is_pass = false;
 
