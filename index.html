@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="drag_selection">
+		<div class="drag_selection_zone">
+		    <ul class="drag_selection_wrap">
+		         <li class="drag_selection_point">1</li>
+		         <li class="drag_selection_point">2</li>
+		         <li class="drag_selection_point">3</li>
+		         <li class="drag_selection_point">4</li>
+		         <li class="drag_selection_point">5</li>
+		         <li class="drag_selection_point">6</li>
+		         <li class="drag_selection_point">7</li>
+		         <li class="drag_selection_point">8</li>
+		         <li class="drag_selection_point">9</li>
+		    </ul>
+		</div>
+
+		<p class="text"></p>
+
+		<form id="test_form">
+		    <button>확인</button>
+		    <button type="reset">선택취소</button>
+		</form>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="drag_selection.js"></script>
+	<script>
+		
+		// 테스트
+		$('#test_form').submit(function(e) {
+			e.preventDefault();
+			$('.text').text(dragSelectionObj.select_list);
+		});
+
+		$('#test_form').on('reset', function(e) {
+			e.preventDefault();
+			dragSelectionObj.reset();
+		});
+
+		// 인스턴스
+		var dragSelectionObj = new DragSelection('.drag_selection_zone', '.drag_selection_point', 'test');
+	</script>
+</body>
+</html>

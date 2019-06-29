@@ -1,0 +1,51 @@
+/* css reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    padding: 50px;
+}
+
+/* component */
+.drag_selection_zone {
+    background: gray;
+    padding: 50px;
+}
+
+.drag_selection_wrap {
+    width: 100%;
+}
+
+.drag_selection_wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.drag_selection_point {
+    background: gold;
+    color: navy;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 10px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.drag_selection_point.active {
+    background: pink;
+}
+
+.drag_selection_line {
+    position: absolute;
+    border: 1px solid #89b;
+    background: #bce;
+    opacity: 0.5;
+}
